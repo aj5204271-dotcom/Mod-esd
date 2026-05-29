@@ -1,0 +1,91 @@
+{
+  "app": {
+    "name": "BGMI Mod",
+    "packageName": "com.bgmi.mod",
+    "version": "1.0.0",
+    "versionCode": 1,
+    "minSdkVersion": 21,
+    "targetSdkVersion": 34,
+    "compileSdkVersion": 34
+  },
+  "permissions": [
+    "android.permission.INTERNET",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.ACCESS_COARSE_LOCATION",
+    "android.permission.CAMERA",
+    "android.permission.RECORD_AUDIO",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.VIBRATE",
+    "android.permission.WAKE_LOCK",
+    "android.permission.GET_ACCOUNTS"
+  ],
+  "features": [
+    "android.hardware.camera",
+    "android.hardware.microphone",
+    "android.hardware.location",
+    "android.hardware.location.gps"
+  ],
+  "activities": [
+    {
+      "name": ".MainActivity",
+      "launchMode": "singleTop",
+      "screenOrientation": "portrait",
+      "exported": true
+    },
+    {
+      "name": ".GameActivity",
+      "launchMode": "singleTask",
+      "screenOrientation": "landscape",
+      "exported": false
+    },
+    {
+      "name": ".LoaderActivity",
+      "launchMode": "singleTop",
+      "screenOrientation": "portrait",
+      "exported": true
+    }
+  ],
+  "services": [
+    {
+      "name": ".GameService",
+      "exported": false
+    },
+    {
+      "name": ".NotificationService",
+      "exported": false
+    }
+  ],
+  "build": {
+    "buildToolsVersion": "34.0.0",
+    "gradle": {
+      "minifyEnabled": true,
+      "shrinkResources": true,
+      "debuggable": false,
+      "proguardRules": "proguard-rules.pro"
+    }
+  },
+  "signing": {
+    "storeFile": "keystore.jks",
+    "storePassword": "your_store_password",
+    "keyAlias": "bgmi_key",
+    "keyPassword": "your_key_password"
+  },
+  "dependencies": {
+    "androidx": {
+      "appcompat": "1.6.1",
+      "constraintlayout": "2.1.4",
+      "material": "1.9.0"
+    },
+    "google": {
+      "firebase": {
+        "analytics": "21.2.0",
+        "messaging": "23.1.1"
+      }
+    },
+    "react": {
+      "native": "0.72.0"
+    }
+  }
+}
